@@ -1,0 +1,5 @@
+libdata-url-java (1.0.1-1) UNRELEASED; urgency=medium
+
+  * Initial release. (Closes: #941916)
+
+ -- Felix Natter <fnatter@gmx.net>  Mon, 07 Oct 2019 17:17:37 +0200
