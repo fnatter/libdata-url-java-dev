@@ -1,0 +1,41 @@
+--- a/src/main/java/com/github/robtimus/net/protocol/data/DataURLConnection.java
++++ b/src/main/java/com/github/robtimus/net/protocol/data/DataURLConnection.java
+@@ -96,7 +96,7 @@
+     @Override
+     public InputStream getInputStream() throws IOException {
+         if (!doInput) {
+-            throw new ProtocolException(Messages.dataURLConnection.getInputStream.falseDoInput.get());
++            throw new ProtocolException("Cannot read from URLConnection if doInput=false (call setDoInput(true))");
+         }
+         if (inputStream == null) {
+             inputStream = new ByteArrayInputStream(data);
+--- a/src/main/java/com/github/robtimus/net/protocol/data/Handler.java
++++ b/src/main/java/com/github/robtimus/net/protocol/data/Handler.java
+@@ -84,14 +84,14 @@
+ 
+     private void validateProtocol(URL u) {
+         if (!PROTOCOL.equals(u.getProtocol())) {
+-            throw new IllegalArgumentException(Messages.handler.invalidProtocol.get(PROTOCOL, u.getProtocol()));
++            throw new IllegalArgumentException(String.format("The URL protocol must be '%s' but is '%s'", PROTOCOL, u.getProtocol()));
+         }
+     }
+ 
+     private int validateCommaPresent(String spec, int start, int limit) {
+         int indexOfComma = spec.indexOf(',', start);
+         if (indexOfComma == -1 || indexOfComma > limit) {
+-            throw new IllegalArgumentException(Messages.handler.missingComma.get(spec));
++            throw new IllegalArgumentException(String.format("No ',' found in data URL %s", spec));
+         }
+         return indexOfComma;
+     }
+--- a/src/main/java/com/github/robtimus/net/protocol/data/MediaType.java
++++ b/src/main/java/com/github/robtimus/net/protocol/data/MediaType.java
+@@ -118,7 +118,7 @@
+         // This wrapper is used instead of mimeType.substring because that copies part of the mime type's contents.
+         CharSequence s = start == 0 && end == mimeType.length() ? mimeType : new SubString(mimeType, start, end);
+         if (!MIME_TYPE_PATTERN.matcher(s).matches()) {
+-            throw new IllegalArgumentException(Messages.mediaType.invalidMimeType.get(mimeType));
++            throw new IllegalArgumentException(String.format("Invalid mime type: %s", mimeType));
+         }
+     }
+ 
