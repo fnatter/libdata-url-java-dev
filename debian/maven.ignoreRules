@@ -1,0 +1,19 @@
+
+com.github.robtimus i18n-maven-plugin * * * *
+com.github.stefanbirkner system-rules * * * *
+junit junit * * * *
+org.apache.maven.plugins maven-antrun-plugin * * * *
+org.apache.maven.plugins maven-assembly-plugin * * * *
+org.apache.maven.plugins maven-dependency-plugin * * * *
+org.apache.maven.plugins maven-deploy-plugin * * * *
+org.apache.maven.plugins maven-gpg-plugin * * * *
+org.apache.maven.plugins maven-install-plugin * * * *
+org.apache.maven.plugins maven-javadoc-plugin * * * *
+org.apache.maven.plugins maven-project-info-reports-plugin * * * *
+org.apache.maven.plugins maven-release-plugin * * * *
+org.apache.maven.plugins maven-site-plugin * * * *
+org.apache.maven.plugins maven-source-plugin * * * *
+org.apache.maven.plugins maven-surefire-plugin * * * *
+org.hamcrest hamcrest-library * * * *
+org.mockito mockito-all * * * *
+org.sonatype.plugins nexus-staging-maven-plugin * * * *
