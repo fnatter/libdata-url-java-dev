@@ -1,3 +1,9 @@
+Description: Replace i18n-maven-plugin by creating the error messages
+ with simple String.format()
+Author: Felix Natter <fnatter@gmx.net>
+Forwarded: not-needed
+Last-Update: 2019-10-09
+
 --- a/src/main/java/com/github/robtimus/net/protocol/data/DataURLConnection.java
 +++ b/src/main/java/com/github/robtimus/net/protocol/data/DataURLConnection.java
 @@ -96,7 +96,7 @@
