@@ -13,6 +13,7 @@ Package: libdata-url-java
 Architecture: all
 Depends: ${misc:Depends}, ${maven:Depends}
 Suggests: ${maven:OptionalDepends}
-Description: data-url
- Support for data URLs as specified in RFC 2397 (https://www.ietf.org/rfc/rfc2397.txt)
+Description: Support for data URLs according to RFC 2397
+ Support for data URLs as specified in RFC 2397
+ (https://www.ietf.org/rfc/rfc2397.txt)
 
